@@ -1,4 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+@layer base {
+  :root {
+    --background: 210, 40%, 98%;
+    --foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 0, 0%, 0%, 0.2;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 0, 0%, 0%, 0.2;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 0, 0%, 0%, 0.2;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 2, 68%, 58%;
+    --destructive-foreground: 222.2 84% 4.9%;
+    --border: 225, 76%, 55%;
+    --input: 210, 40%, 98%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    /*cards background  */
+    --in-process: #F5D565;
+    --completed: #A0ECB1;
+    --failed: #F7D4D3;
+    --task: #97A3B6;
+    --add-new-task: #F5E8D5;
+
+    /* Buttons background colors */
+
+    --badge-in-process: #E9A23B;
+    --badge-completed: #32D657;
+    --badge-failed: #DD524C;
+
+  }
+
+  .sans {
+    --font-outfit: 'Outfit', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+}
