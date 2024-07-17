@@ -17,15 +17,17 @@ const tasks: Task[] = [
   {
     emoji: '☕',
     title: `Task Won’t Do`,
-    icon: './close_ring_duotone-1.svg',
+    icon: './close_ring_duotone.svg',
     backgroundColor: 'failed',
   },
   {
     emoji: '📚',
     title: 'Task To Do',
     description: 'lorem ipsum iasdasd as fasf sdf sd fsd fsdfsdfasfa',
-    backgroundColor: 'add-new-task',
+    backgroundColor: 'task',
   },
+  
+
 ]
 
 export default function Home() {

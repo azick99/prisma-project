@@ -4,13 +4,13 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-md border px-2.5 py-0.5  transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shadow border-transparent',
+  'inline-flex items-center border p-2  rounded-xl  transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2  border-transparent',
   {
     variants: {
       variant: {
-        inProcess: 'bg-[var(--in-process)]',
-        completed: 'bg-[var(--completed)]',
-        failed: 'bg-[var(--failed)] ',
+        inProcess: 'bg-[var(--badge-in-process)]',
+        completed: 'bg-[var(--badge-completed)]',
+        failed: 'bg-[var(--badge-failed)] ',
         outline: 'bg-background',
       },
     },
