@@ -2,7 +2,7 @@ type Task = {
   id: string
   icon: string
   title: string
-  description?: string
-  status?: string
-  backgroundColor:string
+  description: string | null
+  status: string | null
+  backgroundColor: string
 }

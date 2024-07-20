@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { Dialog, DialogContent } from './ui/dialog'
+import { Dialog, DialogContent} from './ui/dialog'
 import { DialogTitle } from '@radix-ui/react-dialog'
 
 const ModalComponent = ({ children }: { children: React.ReactNode }) => {
@@ -12,9 +12,9 @@ const ModalComponent = ({ children }: { children: React.ReactNode }) => {
   }
   return (
     <Dialog defaultOpen={true} onOpenChange={handleClose}>
-      <DialogContent>
-        <DialogTitle>{children}</DialogTitle>
-      </DialogContent>
+        <DialogContent className="top-[25%] left-[65%]">
+          <DialogTitle>{children}</DialogTitle>
+        </DialogContent>
     </Dialog>
   )
 }

@@ -20,12 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen antialiased p-10',
+          'min-h-screen antialiased ',
           inter.className,
           inter.variable
         )}
       >
-        <div className="w-[50vw] mx-auto">
+        <div className="w-[50vw] p-10 mx-auto">
           <header>
             <div className="flex gap-3 items-start">
               <Image src="./Logo.svg" alt="logo" width={45} height={45} />

@@ -1,9 +1,11 @@
+'use client'
 import Image from 'next/image'
 import { Card, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
 import { VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Task = ({
   icon,
@@ -12,7 +14,11 @@ const Task = ({
   status,
   backgroundColor,
   id,
-}: Task) => {
+}: Task ) => {
+  const path = usePathname()
+
+  const isInModal = path === `/board/${id}`
+
   let bg: VariantProps<typeof Badge>['variant'] = 'inProcess'
   if (backgroundColor === 'completed') {
     bg = 'completed'
@@ -24,7 +30,9 @@ const Task = ({
   return (
     <Link
       href={`/board/${id}`}
-      className="border-[2.5px] border-solid border-transparent p-1 transition-all hover:border-border rounded-3xl"
+      className={`border-[2.5px] border-solid border-${
+        isInModal ? 'border' : 'transparent'
+      } p-1 transition-all hover:border-blue-400  rounded-3xl`}
     >
       <Card
         className={cn('flex justify-between p-4 rounded-2xl', {

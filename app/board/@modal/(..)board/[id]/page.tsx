@@ -1,15 +1,14 @@
 import ModalComponent from '@/components/ModelComponent'
 import TaskModal from '@/components/TaskModal'
-import tasks from '@/lib/data'
+import { PrismaClient } from '@prisma/client'
 
-export default function SingleTask({ params }: { params: { id: string } }) {
+const prisma = new PrismaClient()
+export default async function SingleTask({ params }: { params: { id: string } }) {
+  const tasks = await prisma.tasks.findMany()
   const task = tasks.find((task) => task.id === params.id)
   return (
-    <div className='mt-5'>
-
     <ModalComponent>
       <TaskModal task={task} />
     </ModalComponent>
-    </div>
   )
 }

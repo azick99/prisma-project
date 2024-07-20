@@ -1,7 +1,9 @@
 import Task from '@/components/Task'
-import tasks from '@/lib/data'
+import { PrismaClient } from '@prisma/client';
 
-export default function Board() {
+const prisma = new PrismaClient();
+export default async function Board() {
+    const tasks = await prisma.tasks.findMany()
   return (
     <main className="flex flex-col mt-5 gap-6">
       {tasks.map((task) => (
