@@ -1,7 +1,8 @@
 type Task = {
-  emoji: string
+  id: string
+  icon: string
   title: string
   description?: string
-  icon?: string
+  status?: string
   backgroundColor:string
 }
