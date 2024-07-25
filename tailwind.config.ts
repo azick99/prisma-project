@@ -40,6 +40,7 @@ const config = {
         'input-label': ['0.75rem', { lineHeight: '1rem', fontWeight: '500' }],
       },
       colors: {
+
         task: 'hsl(var(--task))',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

@@ -7,6 +7,7 @@ const nextConfig = {
             destination: '/board',
             permanent: false,
           },
+   
         ]
       },
 };

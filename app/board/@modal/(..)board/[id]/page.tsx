@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 export default async function SingleTask({ params }: { params: { id: string } }) {
-  const tasks = await prisma.tasks.findMany()
+  const tasks = await prisma.task.findMany()
   const task = tasks.find((task) => task.id === params.id)
   return (
     <ModalComponent>

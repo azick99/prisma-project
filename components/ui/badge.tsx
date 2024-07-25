@@ -11,6 +11,8 @@ const badgeVariants = cva(
         inProcess: 'bg-[var(--badge-in-process)]',
         completed: 'bg-[var(--badge-completed)]',
         failed: 'bg-[var(--badge-failed)] ',
+        task: 'bg-[var(--task)]',
+        active: 'bg-[var(--in-process)]',
         outline: 'bg-background',
       },
     },

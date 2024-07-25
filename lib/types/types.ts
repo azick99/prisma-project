@@ -3,6 +3,6 @@ type Task = {
   icon: string
   title: string
   description: string | null
-  status: string | null
-  backgroundColor: string
+  imgSrc: string | null
+  status: string
 }
