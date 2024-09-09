@@ -10,6 +10,7 @@ async function main() {
         icon: '⏰',
         title: 'Task in Progress',
         imgSrc: './Time_atack_duotone.svg',
+        description: '',
         status: 'in-process',
       },
       {
@@ -17,6 +18,7 @@ async function main() {
         icon: '🏋️‍♂️',
         title: 'Task Completed',
         imgSrc: './Done_round_duotone.svg',
+        description: '',
         status: 'completed',
       },
       {
@@ -24,6 +26,7 @@ async function main() {
         icon: '☕',
         title: 'Task Won’t Do',
         imgSrc: './close_ring_duotone.svg',
+        description: '',
         status: 'failed',
       },
       {

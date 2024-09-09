@@ -1,10 +1,13 @@
 'use client'
+
 import { useState } from 'react'
-import { RadioGroup, RadioGroupItem } from './ui/radio-group'
+import { RadioGroup } from './ui/radio-group'
 import { Badge } from './ui/badge'
 import Image from 'next/image'
 import { setColors } from './Task'
 import { closeDuotone, done, doneDuotone, timeAatack } from '@/lib/images'
+import { Input } from './ui/input'
+import { Handlechange } from './TaskModal'
 
 const statusGroup = [
   {
@@ -27,8 +30,21 @@ const statusGroup = [
   },
 ]
 
-const StatusGroup = ({ status }: { status: string }) => {
+const StatusGroup = ({
+  status,
+  handleChange,
+}: {
+  status: string
+  handleChange: Handlechange
+}) => {
   const [value, setValue] = useState(status)
+
+  const handleStatusClick = (selectedStatus: string) => {
+    setValue(selectedStatus)
+    handleChange({
+      target: { name: 'status', value: selectedStatus },
+    } as React.ChangeEvent<HTMLInputElement>)
+  }
 
   return (
     <div className="flex flex-col gap-2">
@@ -41,7 +57,7 @@ const StatusGroup = ({ status }: { status: string }) => {
               <div
                 key={stat.id}
                 role="button"
-                onClick={() => setValue(stat.id)}
+                onClick={() => handleStatusClick(stat.status)}
                 className={`flex items-center justify-between transition-all cursor-pointer p-0.5 pr-3 border-[1.5px] border-[var(--task)] rounded-2xl w-full hover:border-blue-300 ${
                   value === stat.status && 'border-border'
                 }`}
@@ -56,8 +72,10 @@ const StatusGroup = ({ status }: { status: string }) => {
                       loading="eager"
                     />
                   </Badge>
-                  <RadioGroupItem
-                    value={stat.id}
+                  <Input
+                    type="radio"
+                    name="status"
+                    value={value}
                     id={stat.id}
                     className="hidden"
                   />
@@ -70,7 +88,7 @@ const StatusGroup = ({ status }: { status: string }) => {
                   </label>
                 </div>
                 {value === stat.status && (
-                  <div className="bg-border rounded-full  justify-center items-center">
+                  <div className="bg-border rounded-full justify-center items-center">
                     <Image
                       src={done}
                       alt="active"

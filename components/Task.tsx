@@ -9,8 +9,6 @@ export function setColors(color: string, badge?: string) {
   if (badge) {
     return `bg-[var(--${badge}-${color})] `
   }
-
-  return `bg-[var(--${color})] `
 }
 
 const Task = ({
@@ -22,9 +20,9 @@ const Task = ({
 
   id,
 }: Task) => {
+  
   const path = usePathname()
 
-  const bgColor = setColors(status)
   const badgeColor = setColors(status, 'badge')
   const isInModal = path === `/board/${id}`
   return (
@@ -34,7 +32,7 @@ const Task = ({
         isInModal ? 'border' : 'transparent'
       } p-1 transition-all hover:border-blue-400 rounded-3xl`}
     >
-      <div className={bgColor + ' rounded-2xl'}>
+      <div className={`card-${id} rounded-2xl`}>
         <Card className="flex justify-between p-4">
           <div className="flex flex-col gap-2">
             <div className="flex gap-5 items-center">
@@ -52,7 +50,13 @@ const Task = ({
           </div>
           {imgSrc && (
             <Badge className={`p-3 ${badgeColor}`}>
-              <Image src={imgSrc} alt="status" width={20} height={20} loading='eager'/>
+              <Image
+                src={imgSrc}
+                alt="status"
+                width={20}
+                height={20}
+                loading="eager"
+              />
             </Badge>
           )}
         </Card>

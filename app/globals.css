@@ -46,9 +46,29 @@
   }
 }
 
+.card-1 {
+  @apply bg-[var(--in-process)]
+}
+
+.card-2 {
+  @apply bg-[var(--completed)]
+}
+
+.card-3 {
+  @apply bg-[var(--failed)]
+}
+
+.card-4 {
+  @apply bg-[var(--task)]
+}
+
+.card-5 {
+  @apply bg-[var(--add-new-task)]
+}
+
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border sans;
   }
 
   body {

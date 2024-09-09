@@ -25,7 +25,7 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <div className="w-[50vw] p-10 mx-auto">
+        <div className="lg:w-[60vw] sm:w-[90vw] w-full p-10 mx-auto">
           <header>
             <div className="flex gap-3 items-start">
               <Image src="./Logo.svg" alt="logo" width={45} height={45} />

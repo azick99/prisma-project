@@ -1,12 +1,28 @@
 'use client'
+
 import { useState } from 'react'
 import { Badge } from './ui/badge'
-import { RadioGroup, RadioGroupItem } from './ui/radio-group'
+import { RadioGroup } from './ui/radio-group'
+import { Handlechange } from './TaskModal'
+import { Input } from './ui/input'
 
 const icons = ['👨‍💻', '💬', '☕', '🏋️‍♂️', '📚', '⏰']
 
-const IconsGroup = ({ icon }: { icon: string }) => {
+const IconsGroup = ({
+  icon,
+  handleChange,
+}: {
+  icon: string
+  handleChange: Handlechange
+}) => {
   const [value, setValue] = useState(icon)
+
+  const handleIconClick = (selectedIcon: string) => {
+    setValue(selectedIcon)
+    handleChange({
+      target: { name: 'icon', value: selectedIcon },
+    } as React.ChangeEvent<HTMLInputElement>)
+  }
 
   return (
     <div className="flex flex-col gap-2">
@@ -18,10 +34,12 @@ const IconsGroup = ({ icon }: { icon: string }) => {
             className="p-2"
             role="button"
             variant={value === icon ? 'active' : 'task'}
-            onClick={() => setValue(icon)} // Update state on Badge click
+            onClick={() => handleIconClick(icon)} // Update state on Badge click
           >
-            <RadioGroupItem
-              value={icon}
+            <Input
+              type="radio"
+              name="icon"
+              value={value}
               id={String(index)}
               className="hidden"
             />

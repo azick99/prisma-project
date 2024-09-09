@@ -12,7 +12,7 @@ const ModalComponent = ({ children }: { children: React.ReactNode }) => {
   }
   return (
     <Dialog defaultOpen={true} onOpenChange={handleClose}>
-      <DialogContent className=" left-[65%] border-0 -translate-x-[30%] w-[49vw] h-[95vh] min-h-[400px] max-w-2xl py-4 px-5 overflow-y-auto">
+      <DialogContent className=" sm:left-[65%] left-3 border-0 sm:-translate-x-[30%] -translate-x-0 sm:w-[49vw] w-[96vw] h-[95vh] sm:min-h-[400px] min-h-[380px] sm:max-w-xl max-w-full py-4 px-5 overflow-y-auto">
         <DialogTitle>{children}</DialogTitle>
       </DialogContent>
     </Dialog>
